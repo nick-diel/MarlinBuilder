@@ -9,7 +9,7 @@ arduino-cli core install STM32:stm32@$1 --additional-urls https://github.com/stm
 OBJCOPY=$(find $HOME/.arduino15/packages/STM32/tools/arm-none-eabi-gcc -name "objcopy")
 
 #copy src for speed improvement
-cp -r /usr/src/marlin/ /tmp/src/
+cp -r /usr/src/marlin/ /tmp/src/marlin
 
 arduino-cli compile --fqbn STM32:stm32:3dprinter:pnum=MALYANM200_F070CB,upload_method=swdMethod,xserial=generic,usb=CDC,xusb=FS,opt=osstd,rtlib=nano --output /tmp/firmware.bin /tmp/src/marlin/Marlin
 
